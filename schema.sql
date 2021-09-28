@@ -3,7 +3,6 @@
 CREATE TABLE animals(
     id serial,
     name varchar(20),
-    species varchar(20),
     date_of_birth date,
     escape_attempts int,
     neutered boolean,
