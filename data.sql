@@ -20,3 +20,16 @@ INSERT INTO animals(name, date_of_birth, escape_attempts, neutered, weight_kg)
 values ('Boarmon', DATE '2005-06-07', 7, true, 20.4);
 INSERT INTO animals(name, date_of_birth, escape_attempts, neutered, weight_kg)
 values ('Blossom', DATE '1998-10-13', 3, true, 17);
+
+INSERT INTO owners(full_name, age)
+values ('Sam Smith', 34);
+INSERT INTO owners(full_name, age)
+values ('Jennifer Orwell', 19);
+INSERT INTO owners(full_name, age)
+values ('Bob', 45);
+INSERT INTO owners(full_name, age)
+values ('Melody Pond', 77);
+INSERT INTO owners(full_name, age)
+values ('Dean Winchester', 14);
+INSERT INTO owners(full_name, age)
+values ('Jodie Whittaker', 38);
