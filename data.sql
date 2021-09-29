@@ -38,3 +38,8 @@ INSERT INTO species(name)
 values ('Pokemon');
 INSERT INTO species(name)
 values ('Digimon');
+
+BEGIN;
+UPDATE animals SET species_id = 2 WHERE name like '%mon';
+UPDATE animals SET species_id = 1 WHERE species_id is null;
+COMMIT;
