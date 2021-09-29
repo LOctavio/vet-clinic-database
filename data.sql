@@ -25,14 +25,14 @@ VALUES
 INSERT INTO species(name) VALUES ('Pokemon'), ('Digimon');
 
 BEGIN;
-UPDATE animals SET species_id = 2 WHERE name like '%mon';
-UPDATE animals SET species_id = 1 WHERE species_id is null;
+UPDATE animals SET species_id = (SELECT id from species WHERE name = 'Digimon') WHERE name like '%mon';
+UPDATE animals SET species_id = (SELECT id from species WHERE name = 'Pokemon') WHERE species_id is null;
 COMMIT;
 
 BEGIN;
-UPDATE animals SET owner_id = 1 WHERE name = 'Agumon';
-UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon' or name = 'Pikachu';
-UPDATE animals SET owner_id = 3 WHERE name = 'Devimon' or name = 'Plantmon';
-UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' or name = 'Squirtle' or name = 'Blossom';
-UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' or name = 'Boarmon';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Sam Smith') WHERE name = 'Agumon';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell') WHERE name = 'Gabumon' or name = 'Pikachu';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Bob') WHERE name = 'Devimon' or name = 'Plantmon';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Melody Pond') WHERE name = 'Charmander' or name = 'Squirtle' or name = 'Blossom';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') WHERE name = 'Angemon' or name = 'Boarmon';
 COMMIT;
