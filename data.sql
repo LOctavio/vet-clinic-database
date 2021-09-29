@@ -33,3 +33,8 @@ INSERT INTO owners(full_name, age)
 values ('Dean Winchester', 14);
 INSERT INTO owners(full_name, age)
 values ('Jodie Whittaker', 38);
+
+INSERT INTO species(name)
+values ('Pokemon');
+INSERT INTO species(name)
+values ('Digimon');
