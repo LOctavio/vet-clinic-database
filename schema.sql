@@ -24,3 +24,9 @@ CREATE TABLE species(
     name varchar(20),
     PRIMARY KEY(id)
 );
+
+ALTER TABLE animals DROP species;
+ALTER TABLE animals ADD species_id int;
+ALTER TABLE animals ADD FOREIGN KEY (species_id) REFERENCES species (id);
+ALTER TABLE animals ADD owner_id int;
+ALTER TABLE animals ADD FOREIGN KEY (owner_id) REFERENCES owners (id);
