@@ -38,3 +38,11 @@ CREATE TABLE vets(
     date_of_graduation date,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE specializations(
+    species_id int,
+    vets_id int,
+    FOREIGN KEY (species_id) REFERENCES species (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    PRIMARY KEY (species_id, vets_id)
+);
