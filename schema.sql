@@ -50,6 +50,7 @@ CREATE TABLE specializations(
 CREATE TABLE visits(
     animals_id int,
     vets_id int,
+    date_of_visit date,
     FOREIGN KEY (animals_id) REFERENCES species (id) ON DELETE RESTRICT ON UPDATE CASCADE,
     FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
     PRIMARY KEY (animals_id, vets_id)
