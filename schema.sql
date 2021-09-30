@@ -52,6 +52,5 @@ CREATE TABLE visits(
     vets_id int,
     date_of_visit date,
     FOREIGN KEY (animals_id) REFERENCES animals (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    PRIMARY KEY (animals_id, vets_id)
+    FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
